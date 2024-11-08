@@ -39,4 +39,9 @@ public class UserController {
             return "登录失败：" + e.getMessage();
         }
     }
+
+    @GetMapping("/profile")
+    public User getUserProfile(@RequestParam String username) {
+        return userService.getUserByUsername(username);
+    }
 }
